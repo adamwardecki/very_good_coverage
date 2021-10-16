@@ -50,6 +50,10 @@ function run() {
           'Lines not covered:\n' +
           linesMissingCoverageByFile.map((line) => `  ${line}`).join('\n')
       );
+
+      core.setOutput('coverage_msg', `Coverage of ${coverage} is less than expected ${minCoverage}\n\n`);
+    } else {
+      core.setOutput('coverage_msg', `Coverage of ${coverage} is greater than or equal to expected ${minCoverage}\n\n`);
     }
   });
 }

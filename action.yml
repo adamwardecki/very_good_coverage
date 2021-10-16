@@ -15,6 +15,9 @@ inputs:
   exclude:
     description: 'list of files you would like to exclude from coverage'
     required: false
+outputs:
+  coverage_msg:
+    description: 'Coverage details that can be displayed in Github commit status check, for example.'
 runs:
   using: 'node12'
   main: 'dist/index.js'
